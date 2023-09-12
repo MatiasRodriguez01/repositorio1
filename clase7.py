@@ -1,7 +1,7 @@
 # 29/8/23                                  PROGRAMACION 1
 #           EJERCICIOS EN CLASE FOR - WHILE
 #           TEMA: ESTRUCTURAS ITERATIVAS
-
+#           nueva rama git 
 #EJERCICIO 1:
 
 abecedario = ("abcdefghijklmnñopqrstuvwxyz")
