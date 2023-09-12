@@ -1,43 +1,43 @@
 # 29/8/23                                  PROGRAMACION 1
 #           EJERCICIOS EN CLASE FOR - WHILE
 #           TEMA: ESTRUCTURAS ITERATIVAS
-#           nueva rama git 
+#            
 #EJERCICIO 1:
 
-abecedario = ("abcdefghijklmnñopqrstuvwxyz")
-oficiales = "12345"
+alphabet = ("abcdefghijklmnñopqrstuvwxyz")
+officers = "12345"
 
 print("BIENVENIDOS AL JUEGO DE ESTRATEGIO!! ")
-corri = int(input("Ingrese el corrimiento para los mensajes: "))
-for x in oficiales:
-    palabra = input(f"Ingrese un mensaje para el OFICIAL {x}: ")
-    mensaje = ""
-    for i in palabra.lower():
-        if i in abecedario:
-            indice = abecedario.find(i)
-            indice_x = (indice+corri)%27
-            mensaje += abecedario[indice_x]
+corrigendum = int(input("Ingrese el corrimiento para los mensajes: "))
+for x in officers:
+    word = input(f"Ingrese un mensaje para el OFICIAL {x}: ")
+    message = ""
+    for i in word.lower():
+        if i in alphabet:
+            index = alphabet.find(i)
+            index_x = (index+corrigendum)%27
+            message += alphabet[index_x]
         else:
-            mensaje += i
+            message += i
 
-    print(f"MENSAJE PARA EL OFICIAL {x}: {mensaje}")
+    print(f"MENSAJE PARA EL OFICIAL {x}: {message}")
     print("")
 
 #EJERCICIO 2: 
 
-numero = int(input("Ingrese un numero(Para salir ingrese 0): "))
-impares = 0
-pares = 0
+number = int(input("Ingrese un numero(Para salir ingrese 0): "))
+obb = 0
+even = 0
 
 
-while numero != 0:
-    for i in range(len(str(numero))):
-        digito = int((numero % (10**(i+1)))/10**i)
-        if digito % 2 == 0:
-            pares += 1
+while number != 0:
+    for i in range(len(str(number))):
+        digit = int((number % (10**(i+1)))/10**i)
+        if digit % 2 == 0:
+            even += 1
         else:
-            impares += 1
-    numero = int(input("Ingrese un numero(Para salir ingrese 0): "))
+            obb += 1
+    number = int(input("Ingrese un numero(Para salir ingrese 0): "))
     
-print(f"Se ingresaron {pares} digitos PARES")
-print(f"Se ingresaron {impares} digitos IMPARES")
+print(f"Se ingresaron {even} digitos PARES")
+print(f"Se ingresaron {obb} digitos IMPARES")
