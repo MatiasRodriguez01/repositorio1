@@ -1,14 +1,16 @@
 import random
 
 '''
-El programa pedira que el usuario ingrese una palabra que sea palindromo para ingresar al juego
+El programa pedira que el usuario ingrese una palabra que sea palindromo para ingresar al juego. El juego
+consiste en adivinar un numero elegido al azar, y el usuario tendra 5 intentos para adivinarlo
 '''
 
 # Con este bucle while, ingresamos al juego 
 print("BIENVENIDO AL JUEGO!!")
 while True:
 
-    #una vez que ingresamos el programa le pedira al usuario un palabra
+    # una vez que ingresamos el programa le pedira al usuario un palabra
+    # Si la palabra es palindromo entrara al juego, sino tendra que ingresar otra palabra
     print("------------------------------------------------------------------")
     print("PARA INGRESAR AL JUEGO INGRESE UNA PALABRA QUE SEA PALINDROMO: ")
     word = input("Ingrese su palabra(Ingrese 0 para salir del juego): ")
@@ -25,16 +27,19 @@ while True:
         
         # con este if comparara la 2 palabra para ver si es palindromo
         if (word == reverse_word):
-            # Entra en esta sentencia significa que entro al juego, ahora tendra 5 intentos para acertar el numero
+            # Si entra en esta sentencia significa que entro al juego, ahora tendra 5 intentos para acertar el numero
             print("FELICIDADES!!!")
             print("La palabra es palindromo, PODES JUGAR!!")
             print("Vas a tener 5 intentos para ganar, SINO perdera el juego!!")
             print("")
             random_number = random.randint(0,100)
             attemps = 0
-            # En el siguiente bucle 
-            # 
+            # En el siguiente bucle, el usuario tendra que adivinar el numero que fue elegido al azar en la variable random_number
+            # y tendra 5 intentos para adivinar el numero
             while True:
+                # en el siguiente codicional se mostrara mucho mensajes a medida que el usuario va insertando numeros
+                # se le mostraran pistas para poder adivinarlo si el numero es mayor o es menor, si adivino el numero se sale del bucle
+                # si se terminan los intentos el usuario se saldra del bucle y perdera el juego
                 if attemps < 5:
                     user_number = int(input("Ingrese un numero, entre el 0 y el 100: "))
                     attemps += 1
@@ -52,12 +57,13 @@ while True:
                     print("PERDISTE!!, SE AGOTARON TUS INTENTOS!!")
                     break
         else:
-            # Si entra en el else 
+            # Si entra en el else, significa que el usuario no ingreso un numero palindromo y tendra que ingresar otra palabra
             print("La palabra ingresada no es palindromo!!!!")
             print("INGRESE OTRA!!")
             continue
         
     else:
+        # Si entra en el else significa que el usuario ingreso 0 para salir 
         break
 print("¡¡GRACIAS POR JUGAR!!")
     
