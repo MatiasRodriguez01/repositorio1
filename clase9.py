@@ -40,6 +40,18 @@ while number <= 30:
     else:
         print(number)
 print("")
+
+# Ejercicio 1:
+
+words = input("Ingrese una palabra")
+while True:
+    if words == "":
+        print("Saliendo...")
+        break
+    else:  
+        print(words.upper())
+print("")
+
 # Ejercicio 2: 
 
 deposit_total = 0
@@ -52,18 +64,18 @@ while True:
     print("* D para depositar dinero")
     print("* R para retirar dinero")
     print("* Ingrese [salir] para salir del banco")
-    options = input("Ingrese su opcion: ")
-    if options.upper() == "D":
+    option = input("Ingrese su opcion: ")
+    if option.upper() == "D":
         deposit = int(input("Ingrese el monto que desea depositar: "))
         money += deposit 
         deposit_total += deposit
         continue
-    elif options.upper() == "R":
+    elif option.upper() == "R":
         withdrawal = int(input("Ingrese el monto que desea retirar: "))
         money -= withdrawal
         withdrawal_total += withdrawal
         continue
-    elif options.lower() == "salir":
+    elif option.lower() == "salir":
         break
     else:
         print("LA OPCION INGRESADA NO ES VALIDA!!")
