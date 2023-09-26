@@ -1,3 +1,5 @@
+#PROGRAMA CORREGUIDO
+
 # Definiciones de funciones
 
 def most(a, b):
