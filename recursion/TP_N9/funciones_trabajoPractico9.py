@@ -84,5 +84,28 @@ def k(n, p):
         return (n*p) + k(n-1, p)
 
 # EJERCICIO 8:
-# EJERCICIO 9:
-# EJERCICIO 10:
+def pascal(n, k):
+    if k == 0 or k == n:
+        return 1
+    else:
+        return pascal(n - 1, k - 1) + pascal(n - 1, k)
+    
+# Ejercicio_9
+def combinations(c_list, k, actual="", result=[]):
+    if k == 0:
+        result.append(actual)
+        return
+
+    for caracter in c_list:
+        combinations(c_list, k - 1, actual + caracter, result)
+
+# Ejercicio_10
+
+def sheet_measure(sheet_n):
+    if sheet_n == 0:
+        return (841, 1189)  # Hoja A0
+    else:
+        previous_width, previous_length = sheet_measure(sheet_n - 1)
+        new_width = previous_length
+        new_length = previous_width / 2
+        return (new_width, new_length)
