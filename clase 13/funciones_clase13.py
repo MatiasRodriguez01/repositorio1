@@ -116,5 +116,74 @@ def numbers_of_travelers(x, pasajeros, localidades):
 
 # EJERCICIO 2
 
+def home(buy_list):
+    home_list = []
+    for i in buy_list:
+        if (i[3] not in home_list):
+            home_list.append(i[3])
+        else:
+            pass
+    return home_list
 
 
+# EJERCICIO 3:
+
+def new_date(diccionario):
+    socio = int(input("Ingrese el numero del socio para modificar su fecha: "))
+    fecha = input("Ingrese la nueva fecha de ingreso para modificarla(En formato dd/mm/aaaa): ")
+    for numero, datos in diccionario:
+        if socio == numero:
+            datos['fecha_ingreso'] = fecha
+            if fecha == "13/08/2018":
+                datos['fecha_ingreso'] = "14/08/2018"
+    
+
+
+def delete_membre(diccionario):
+    socio = input("Ingrese el nombre y apellido del socio que desee dar de baja: ")
+    for numero, datos in diccionario.items():
+        if socio.title() in datos['nombre']:
+            del diccionario[numero]
+
+def debt(diccionario):
+    socio = int(input("Ingrese el numero del socio para ver si pago las coutas adeudadas: "))
+    if diccionario[socio]['cuota_al_dia'] == False:
+        print(f"EL socio N°{socio} no ha pagado todas las coutas!!.")
+    else:
+        print(f"EL socio N°{socio} esta al dia con las coutas.")
+
+def show_membres(diccionario):
+    for numero, datos in diccionario.items():
+        print(f"socio N°{numero}, {datos}")
+
+def clean_screen():
+    tecla = input("Ingrese una tecla para salir ")
+    os.system('cls')
+
+def menu():
+    print("------------------------")
+    print("MENU:")
+    print("1) Informar la cantidad de socios del club.")
+    print("2) Ver si un socio ha pagado todas las cuotas adeudadas.")
+    print("3) Modifcar la fecha de ingreso de un socio.")
+    print("4) Dar de baja a un socio.")
+    print("5) Imprimer el listado de socios completo.")
+    print("6) Salir.")
+
+
+'''
+def add_member(diccionario):
+    print("Iscriba un nuevo socio: ")
+    socio = {}
+    nombre = input("Ingrese su nombre: ")
+    fecha = input("Ingrese a fecha de ingreso, en formato dd/mm/aaaa: ")
+    cuota = input("Esta al dia con la cuota(si/no): ")
+
+    socio['nombre'] = nombre
+    socio['fecha_ingreso'] = fecha
+    socio['cuota_al_dia'] = (cuota.lower() == "si")
+
+    n = len(diccionario) + 1
+    nuevo = {n : socio}
+    return nuevo
+'''
