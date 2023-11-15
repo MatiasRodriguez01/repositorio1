@@ -250,13 +250,7 @@ while True:
     print("MAGNETO NESESITA TU AYUDA PARA RECLUTAR MUTANTES!!")
     print("INGRESE EL ADN DEL INDIVIDUO PARA SABER SI ES MUTANTE O NO:")
     # iniciamos el programa con un bucle while
-    ''' Casos de prueba:
-    no_mutant = ["AGGGTT","AAAGGT","TCACTG","AACTTA","ACCCTT","AAGGGT"]
-    mutant = ["TAAAAA","TTCCCA","TCTCCA","TCCTCA","TCCCTA","CCCCCA"]
     adn = fill_adn() # con esta funcion (fill_adn) llenara 6 palabra y las guardara en una lista
-    * Selecciones la opcion, o harraste esa la lista o funcion para probrar el ADN
-    '''
-    adn = ["AGGGTT","AAAGGT","TCACTG","AACTTA","ACCCTT","AAGGGT"]
     show_matriz(adn) # con esta mostrara los elementos de la lista en corchetes.
     mutants = 0 # inicializaremos un contador, en la cual acumularemos la cantidad de mutantes encontrados
     if is_mutant(adn):  
